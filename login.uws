@@ -1,0 +1,18 @@
+
+// finallyを必ず実行してもらう
+OPTION OPTFINALLY
+
+// ChkImgX関数をインクルード
+CALL ChkImgX.uws
+
+startup_chkimgx()
+
+
+if chkimgx("login.bmp")
+	mmv(G_IMGX_X, G_IMGX_Y)
+	btn(LEFT, CLICK, G_IMGX_X, G_IMGX_Y)
+endif
+
+finally
+	shutdown_chkimgx()
+endtry
